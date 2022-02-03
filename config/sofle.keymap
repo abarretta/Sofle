@@ -33,7 +33,7 @@
             sensor-bindings = <&inc_dec_kp F7 F8>;
         };
 
-        lower_layer {
+        qwerty_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
 // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
@@ -43,9 +43,9 @@
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
 &kp ESC     &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL
-&kp GRAVE   &kp Q  &kp W    &kp F    &kp P     &kp B                       &kp J     &kp L     &kp U     &kp Y    &kp SEMI &kp BSLH
-&lt FN CAPS &kp A  &kp R    &kp S    &kp T     &kp G                       &kp M     &kp N     &kp E     &kp I    &kp O    &kp SQT
-&kp LSHFT   &kp Z  &kp X    &kp C    &kp D     &kp V   &kp F9     &tog QWT &kp K     &kp H     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp GRAVE   &kp Q  &kp W    &kp E    &kp R     &kp T                       &kp Y     &kp U     &kp I     &kp O    &kp P    &kp BSLH
+&lt FN CAPS &kp A  &kp S    &kp D    &kp F     &kp G                       &kp H     &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&kp LSHFT   &kp Z  &kp X    &kp C    &kp V     &kp B   &kp F9     &tog QWT &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                    &kp UP   &kp DOWN &kp LCTRL &kp TAB &kp SPACE  &kp RET  &kp BSPC  &kp RALT  &kp LEFT  &kp RIGHT
             >;
 
