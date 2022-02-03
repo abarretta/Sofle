@@ -64,9 +64,9 @@
             bindings = <
 &kp F1    &kp F2 &kp F3            &kp F4             &kp F5            &kp F6                             &kp F7    &kp F8      &kp F9     &kp F10   &kp F11   &kp F12
 &trans    &trans &rgb_ug RGB_TOG   &rgb_ug RGB_HUI    &rgb_ug RGB_SAI   &rgb_ug RGB_BRI                    &trans    &trans      &trans     &trans    &trans    &trans
-&lt FN CAPS &kp A  &kp S    &kp D    &kp F     &kp G                       &kp H     &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT   &kp Z  &kp X    &kp C    &kp V     &kp B   &kp F9     &tog QWT &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                   &kp UP   &kp DOWN &kp LCTRL &kp TAB &kp SPACE  &kp RET  &kp BSPC  &kp RALT  &kp LEFT  &kp RIGHT
+&trans    &trans &rgb_ug RGB_EFF   &rgb_ug RGB_HUD    &rgb_ug RGB_SAD   &rgb_ug RGB_BRD                    &trans    &kp MINUS   &kp EQUAL  &kp LBKT  &kp RBKT  &trans
+&trans    &trans &rgb_ug RGB_EFR   &rgb_ug RGB_SPI    &rgb_ug RGB_SPD   &trans  &trans      &trans  &trans &kp UNDER &kp PLUS    &kp LBRC   &kp RBRC  &trans
+                 &kp PG_UP         &kp PG_DN          &kp RCTRL         &trans  &trans      &trans  &trans &kp RALT  &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp F7 F8>;
