@@ -13,45 +13,6 @@
 #define FN 2
 
 
-/*
- * Temporarily here because nice nano v2 spi is not defined on ZMk Yet
- * Source: https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/reviung41/boards/nice_nano.overlay
- * GitHub Issue: https://github.com/zmkfirmware/zmk/issues/885
- */
-
-&spi1 {
-   compatible = "nordic,nrf-spim";
-   status = "okay";
-   mosi-pin = <6>;
-   // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-   sck-pin = <5>;
-   miso-pin = <7>;
-
-   led_strip: ws2812@0 {
-      compatible = "worldsemi,ws2812-spi";
-      label = "WS2812";
-
-      /* SPI */
-      reg = <0>; /* ignored, but necessary for SPI bindings */
-      spi-max-frequency = <4000000>;
-
-      /* WS2812 */
-      chain-length = <11>; /* arbitrary; change at will */
-      spi-one-frame = <0x70>;
-      spi-zero-frame = <0x40>;
-   };
-};
-
-/ {
-   chosen {
-      zmk,underglow = &led_strip;
-   };
-};
-
-/*
- * Temporarily here because nice nano v2 spi is not defined on ZMk YET
- */
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -67,7 +28,7 @@
 &kp ESC     &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp DEL
 &kp GRAVE   &kp Q  &kp W    &kp F    &kp P     &kp B                       &kp J     &kp L     &kp U     &kp Y    &kp SEMI &kp BSLH
 &lt FN CAPS &kp A  &kp R    &kp S    &kp T     &kp G                       &kp M     &kp N     &kp E     &kp I    &kp O    &kp SQT
-&kp LSHFT   &kp Z  &kp X    &kp C    &kp D     &kp V  &tog QWT    &kp F9   &kp K     &kp H     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp LSHFT   &kp Z  &kp X    &kp C    &kp D     &kp V   &kp F9     &tog QWT &kp K     &kp H     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                    &kp UP   &kp DOWN &kp LCTRL &kp TAB &kp SPACE  &kp RET  &kp BSPC  &kp RALT  &kp LEFT  &kp RIGHT
             >;
 
@@ -102,10 +63,10 @@
 // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
-&bt BT_CLR &kp F2 &kp F3            &kp F4             &kp F5            &kp F6                             &kp F7    &kp F8      &kp F9     &kp F10   &kp F11   &kp F12
-&trans    &trans &rgb_ug RGB_TOG   &rgb_ug RGB_HUI    &rgb_ug RGB_SAI   &rgb_ug RGB_BRI                    &trans    &trans      &trans     &trans    &trans    &trans
-&trans    &trans &rgb_ug RGB_EFF   &rgb_ug RGB_HUD    &rgb_ug RGB_SAD   &rgb_ug RGB_BRD                    &trans    &kp MINUS   &kp EQUAL  &kp LBKT  &kp RBKT  &trans
-&trans    &trans &rgb_ug RGB_EFR   &rgb_ug RGB_SPI    &rgb_ug RGB_SPD   &trans  &trans      &trans  &trans &kp UNDER &kp PLUS    &kp LBRC   &kp RBRC  &trans
+&kp F1     &kp F2 &kp F3           &kp F4             &kp F5            &kp F6                             &kp F7    &kp F8      &kp F9     &kp F10   &kp F11   &kp F12
+&trans     &trans &rgb_ug RGB_TOG  &rgb_ug RGB_HUI    &rgb_ug RGB_SAI   &rgb_ug RGB_BRI                    &trans    &trans      &trans     &trans    &trans    &trans
+&trans     &trans &rgb_ug RGB_EFF  &rgb_ug RGB_HUD    &rgb_ug RGB_SAD   &rgb_ug RGB_BRD                    &trans    &kp MINUS   &kp EQUAL  &kp LBKT  &kp RBKT  &trans
+&trans     &trans &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &rgb_ug RGB_SPD   &trans  &bt BT_CLR  &trans  &trans &kp UNDER &kp PLUS    &kp LBRC   &kp RBRC  &trans
                  &kp PG_UP         &kp PG_DN          &kp RCTRL         &trans  &trans      &trans  &trans &kp RALT  &trans      &trans
             >;
 
